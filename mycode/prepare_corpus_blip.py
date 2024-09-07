@@ -43,9 +43,8 @@ class CorpusDatasetBLIP(Dataset):
 def create_dataloader(dataset, batch_size=1, num_workers=0):  # メモリ削減のためにバッチサイズとワーカー数を調整
     return DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=False)
 
-# コーパスベクトルの保存と中間ファイルの作成
 def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_blip.pt', checkpoint_file='checkpoint.json'):
-    corpus_vectors = []
+    corpus_vectors = []  # listに初期化
     last_saved_batch = 0
 
     # チェックポイントの読み込み
@@ -55,7 +54,8 @@ def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_b
             last_saved_batch = checkpoint.get("last_saved_batch", 0)
             # ファイルが存在する場合のみ読み込み
             if os.path.exists(checkpoint.get("corpus_file", output_path)):
-                corpus_vectors = torch.load(checkpoint.get("corpus_file", output_path))
+                corpus_vectors = torch.load(checkpoint.get("corpus_file", output_path))  # Tensorが読み込まれる
+                corpus_vectors = [corpus_vectors]  # リストに変換
             else:
                 print(f"Warning: {checkpoint.get('corpus_file', output_path)} not found, starting from scratch.")
     
@@ -67,19 +67,16 @@ def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_b
         images = batch['image'].to(device)
         
         # BLIPのモデルを使って特徴量を抽出
-        outputs = model.vision_model(pixel_values=images)
-        image_embeds = outputs.last_hidden_state[:, 0, :]  # [CLS]トークンの出力を特徴量として使用
-        corpus_vectors.append(image_embeds)
-        
-        # メモリを解放
-        del images, outputs, image_embeds
-        torch.cuda.empty_cache()  # GPUキャッシュの解放
-        gc.collect()  # ガベージコレクションの強制実行
+        with torch.no_grad():  # メモリ消費を抑えるために勾配を計算しない
+            outputs = model.vision_model(pixel_values=images)
+            image_embeds = outputs.last_hidden_state[:, 0, :]  # [CLS]トークンの出力を特徴量として使用
 
-        # 50バッチごとに保存
-        if (i + 1) % 50 == 0:
-            corpus_vectors_tensor = torch.cat(corpus_vectors)
-            torch.save(corpus_vectors_tensor, output_path)
+        corpus_vectors.append(image_embeds.cpu())  # Tensorをリストに追加
+
+        # 100バッチごとに保存
+        if (i + 1) % 100 == 0:
+            corpus_vectors_tensor = torch.cat(corpus_vectors, dim=0)  # 各Tensorを結合
+            torch.save(corpus_vectors_tensor, output_path)  # 保存
             with open(checkpoint_file, 'w') as f:
                 json.dump({"last_saved_batch": i + 1, "corpus_file": output_path}, f)
             corpus_vectors = []  # メモリ使用量を抑えるためリセット
@@ -87,10 +84,12 @@ def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_b
 
     # 最終的に全てのベクトルを保存
     if corpus_vectors:
-        corpus_vectors_tensor = torch.cat(corpus_vectors)
+        corpus_vectors_tensor = torch.cat(corpus_vectors, dim=0)  # リストをTensorに変換
         torch.save(corpus_vectors_tensor, output_path)
         with open(checkpoint_file, 'w') as f:
             json.dump({"last_saved_batch": i + 1, "corpus_file": output_path}, f)
+
+
 
 # BLIPを使ったコーパス生成
 def generate_blip_corpus(corpus_file_path, captions_file_path, data_dir):
