@@ -1,0 +1,9 @@
+.env
+*.png
+*.jpg
+*.jpeg
+*.zip
+*.json
+*.pt
+*.csv
+*sif
