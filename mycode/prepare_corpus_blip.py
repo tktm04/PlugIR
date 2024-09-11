@@ -4,8 +4,8 @@ from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoProcessor, BlipForImageTextRetrieval
 import torch
-from tqdm import tqdm  # 進捗表示のためにtqdmをインポート
-import gc  # ガベージコレクション
+import torch.nn.functional as F
+from tqdm import tqdm
 
 # コーパス画像のロード
 def load_corpus_images(corpus_file_path, data_dir):
@@ -14,18 +14,10 @@ def load_corpus_images(corpus_file_path, data_dir):
     corpus_image_paths = [os.path.join(data_dir, img) for img in corpus_images]
     return corpus_image_paths
 
-# キャプションのロード
-def load_captions(captions_file_path):
-    with open(captions_file_path, 'r') as f:
-        captions_data = json.load(f)
-    image_to_caption = {entry['id']: entry['caption'] for entry in captions_data}
-    return image_to_caption
-
 # Datasetクラスの定義
 class CorpusDatasetBLIP(Dataset):
-    def __init__(self, image_paths, image_to_caption, processor):
+    def __init__(self, image_paths, processor):
         self.image_paths = image_paths
-        self.image_to_caption = image_to_caption
         self.processor = processor
 
     def __len__(self):
@@ -33,84 +25,89 @@ class CorpusDatasetBLIP(Dataset):
 
     def __getitem__(self, idx):
         image_path = self.image_paths[idx]
-        image = Image.open(image_path)
-        image_id = os.path.basename(image_path)
-        caption = self.image_to_caption.get(image_id, ["No caption available"])
-        processed_image = self.processor(images=image, return_tensors="pt")['pixel_values'][0]
-        return {'image': processed_image, 'caption': caption}
+        try:
+            image = Image.open(image_path).convert("RGB")
+            processed_image = self.processor(images=image, return_tensors="pt")['pixel_values'][0]
+            return {'image': processed_image, 'id': idx}
+        except Exception as e:
+            print(f"Error loading image {image_path}: {e}")
+            return None
 
 # DataLoaderの作成
-def create_dataloader(dataset, batch_size=1, num_workers=0):  # メモリ削減のためにバッチサイズとワーカー数を調整
-    return DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=False)
+def create_dataloader(dataset, batch_size=8, num_workers=1):
+    return DataLoader(dataset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
 
-def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_blip.pt', checkpoint_file='checkpoint.json'):
-    corpus_vectors = []  # listに初期化
-    last_saved_batch = 0
+# コーパスベクトルの作成と保存
+def save_corpus_vectors(dataloader, model, device, output_path='corpus_vectors_blip.pt'):
+    corpus_vectors = []
+    corpus_ids = []
 
-    # チェックポイントの読み込み
-    if os.path.exists(checkpoint_file):
-        with open(checkpoint_file, 'r') as f:
-            checkpoint = json.load(f)
-            last_saved_batch = checkpoint.get("last_saved_batch", 0)
-            # ファイルが存在する場合のみ読み込み
-            if os.path.exists(checkpoint.get("corpus_file", output_path)):
-                corpus_vectors = torch.load(checkpoint.get("corpus_file", output_path))  # Tensorが読み込まれる
-                corpus_vectors = [corpus_vectors]  # リストに変換
-            else:
-                print(f"Warning: {checkpoint.get('corpus_file', output_path)} not found, starting from scratch.")
-    
-    # バッチ処理を再開
-    for i, batch in enumerate(tqdm(dataloader, desc="Processing batches", initial=last_saved_batch)):
-        if i < last_saved_batch:
-            continue  # 再開時に処理済みのバッチをスキップ
+    for batch in tqdm(dataloader, desc="Processing batches"):
+        if batch is None:
+            continue
 
         images = batch['image'].to(device)
-        
-        # BLIPのモデルを使って特徴量を抽出
-        with torch.no_grad():  # メモリ消費を抑えるために勾配を計算しない
-            outputs = model.vision_model(pixel_values=images)
-            image_embeds = outputs.last_hidden_state[:, 0, :]  # [CLS]トークンの出力を特徴量として使用
+        ids = batch['id'].to(device)
 
-        corpus_vectors.append(image_embeds.cpu())  # Tensorをリストに追加
+        # BLIPのビジョンモデルを使って特徴量を抽出
+        with torch.no_grad():
+            vision_outputs = model.vision_model(pixel_values=images)
+            image_embeds = vision_outputs.last_hidden_state[:, 0, :].to(torch.float32)
 
-        # 100バッチごとに保存
-        if (i + 1) % 100 == 0:
-            corpus_vectors_tensor = torch.cat(corpus_vectors, dim=0)  # 各Tensorを結合
-            torch.save(corpus_vectors_tensor, output_path)  # 保存
-            with open(checkpoint_file, 'w') as f:
-                json.dump({"last_saved_batch": i + 1, "corpus_file": output_path}, f)
-            corpus_vectors = []  # メモリ使用量を抑えるためリセット
-            torch.cuda.empty_cache()  # キャッシュを再度解放
+            # vision_projを通して正規化
+            image_embeds = F.normalize(model.vision_proj(image_embeds), dim=-1)
 
-    # 最終的に全てのベクトルを保存
-    if corpus_vectors:
-        corpus_vectors_tensor = torch.cat(corpus_vectors, dim=0)  # リストをTensorに変換
-        torch.save(corpus_vectors_tensor, output_path)
-        with open(checkpoint_file, 'w') as f:
-            json.dump({"last_saved_batch": i + 1, "corpus_file": output_path}, f)
+        # ベクトルとIDを追加
+        corpus_vectors.append(image_embeds)
+        corpus_ids.append(ids)
 
+    # 全てのベクトルとIDを連結
+    corpus_vectors = torch.cat(corpus_vectors)
+    corpus_ids = torch.cat(corpus_ids)
 
+    # IDでソート
+    arg_ids = torch.argsort(corpus_ids)
+    corpus_vectors = corpus_vectors[arg_ids]
+    corpus_ids = corpus_ids[arg_ids]
+
+    # コーパスを保存
+    torch.save((corpus_ids, corpus_vectors), output_path)
+    print(f"Saved corpus vectors to {output_path}")
 
 # BLIPを使ったコーパス生成
-def generate_blip_corpus(corpus_file_path, captions_file_path, data_dir):
+def generate_blip_corpus(corpus_file_path, data_dir, cache_dir):
     processor = AutoProcessor.from_pretrained("Salesforce/blip-itm-large-coco")
     model = BlipForImageTextRetrieval.from_pretrained("Salesforce/blip-itm-large-coco").to('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    
+    checkpoint_path = '../model/blip_finetuned_plugir_epoch35.pth'
+    ckpt = torch.load(checkpoint_path, map_location='cuda' if torch.cuda.is_available() else 'cpu')
+    state_dict = ckpt['model']
+    msg = model.load_state_dict(state_dict, strict=False)
+    print(f"Load pretrained model from {checkpoint_path}")
+    
+    # 事前学習済みモデルのロード
+    # checkpoint_path = '../model/chatir_weights.ckpt'
+    # state_dict = torch.load(checkpoint_path, map_location='cuda' if torch.cuda.is_available() else 'cpu')  # 直接 state_dict をロード
+    # msg = model.load_state_dict(state_dict, strict=False)  # strict=False でロード
+    # print(f"Load pretrained model from {checkpoint_path}")
 
-    # コーパスとキャプションをロードしてデータセットを作成
+    # コーパスをロードしてデータセットを作成
     corpus_image_paths = load_corpus_images(corpus_file_path, data_dir)
-    image_to_caption = load_captions(captions_file_path)
-    dataset = CorpusDatasetBLIP(corpus_image_paths, image_to_caption, processor)
+    dataset = CorpusDatasetBLIP(corpus_image_paths, processor)
 
     # DataLoaderの作成
     dataloader = create_dataloader(dataset)
+    
+    output_path = os.path.join(cache_dir, 'corpus_vectors_blip.pt')
 
-    # コーパスベクトルの保存 (進捗が表示される)
-    save_corpus_vectors(dataloader, model, 'cuda' if torch.cuda.is_available() else 'cpu')
+    # コーパスベクトルの保存
+    save_corpus_vectors(dataloader, model, 'cuda' if torch.cuda.is_available() else 'cpu', output_path)
 
 # 実行例
 if __name__ == "__main__":
     corpus_file_path = '../Protocol/Search_Space_val_50k.json'
-    captions_file_path = '../Protocol/visdial_captions.json'
     data_dir = '../../Visdial/'
-    
-    generate_blip_corpus(corpus_file_path, captions_file_path, data_dir)
+    cache_dir = '../cache/'
+
+    generate_blip_corpus(corpus_file_path, data_dir, cache_dir)

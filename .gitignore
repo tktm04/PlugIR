@@ -7,3 +7,5 @@
 *.pt
 *.csv
 *sif
+*.pth
+*.ckpt

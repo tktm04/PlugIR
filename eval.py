@@ -29,7 +29,7 @@ parser.add_argument('--split', action='store_true', help="load dialog (caption) 
 
 cfg = {'corpus_bs': 256,
        'queries_bs': 256,
-       'num_workers': 8,
+       'num_workers': 8, ## default 8
        'sep_token': ', ',  # Separation between dialog rounds
        'queries_path': None,
        'corpus_path': 'Protocol/Search_Space_val_50k.json',
@@ -250,6 +250,7 @@ class PlugIREval:
             logging.info(f"<<<<Cached corpus has been loaded: {self.cfg['cache_corpus']} >>>>>")
             logging.info(f"Warning: Make sure this corpus has been indexed with the right image embedder!")
             self.corpus = torch.load(self.cfg['cache_corpus'])
+            
             return
         # return
         dataloader = torch.utils.data.DataLoader(self.corpus_dataset,
@@ -313,8 +314,8 @@ def cumulative_hits_per_round(target_recall, ranks, targets, hitting_recall=10):
 
 def CLIP_ZERO_SHOT_BASELINE():
     # Install CLIP library from https://github.com/openai/CLIP
-    # model, preprocess = clip.load("ViT-B/32", device='cpu')
-    model, preprocess = clip.load("ViT-B/16", device='cpu')
+    model, preprocess = clip.load("ViT-B/32", device='cpu')
+    # model, preprocess = clip.load("ViT-B/16", device='cpu')
     model = model.to(device)
     image_embedder = ImageEmbedder(lambda img: model.encode_image(img), lambda path: preprocess(Image.open(path)))
     # Note that CLIP supports only 77 tokens!! this is just a baseline.
@@ -333,6 +334,10 @@ def BLIP_ZERO_SHOT_BASELINE(cfg):
         state_dict = ckpt['model']
         msg = model.load_state_dict(state_dict, strict=False)
         logging.info(f"Load pretrained model with msg: {msg}")
+        
+        # state_dict = torch.load(cfg['finetuned_model_path'], map_location="cpu")  # 直接 state_dict をロード
+        # msg = model.load_state_dict(state_dict, strict=False)  # strict=False でロード
+        # print(f"Load pretrained model from {cfg['finetuned_model_path']}")
 
     model = model.to(device)
 

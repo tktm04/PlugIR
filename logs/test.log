@@ -1,0 +1,423 @@
+2024-09-08 16:43:10,367 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 16:43:10,368 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 17:10:50,526 | Preparing corpus (search space)...
+2024-09-08 17:11:19,005 | Preparing corpus (search space)...
+2024-09-08 17:15:59,277 | Preparing corpus (search space)...
+2024-09-08 17:20:16,356 | Preparing corpus (search space)...
+2024-09-08 17:22:04,106 | Calculate recalls for each dialogues of length 0...
+2024-09-08 17:22:06,701 | Calculate recalls for each dialogues of length 1...
+2024-09-08 17:22:09,244 | Calculate recalls for each dialogues of length 2...
+2024-09-08 17:22:11,819 | Calculate recalls for each dialogues of length 3...
+2024-09-08 17:22:14,447 | Calculate recalls for each dialogues of length 4...
+2024-09-08 17:22:17,118 | Calculate recalls for each dialogues of length 5...
+2024-09-08 17:22:19,837 | Calculate recalls for each dialogues of length 6...
+2024-09-08 17:22:22,621 | Calculate recalls for each dialogues of length 7...
+2024-09-08 17:22:25,450 | Calculate recalls for each dialogues of length 8...
+2024-09-08 17:22:28,354 | Calculate recalls for each dialogues of length 9...
+2024-09-08 17:22:31,284 | Calculate recalls for each dialogues of length 10...
+2024-09-08 17:22:34,644 | ====== Results for Hits@10 ====== 
+2024-09-08 17:22:34,645 | 	 Dialog Length: 0: 40.12%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 1: 45.25%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 2: 48.11%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 3: 50.0%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 4: 51.41%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 5: 52.28%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 6: 53.1%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 7: 53.34%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 8: 53.44%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 9: 53.49%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 10: 53.49%
+2024-09-08 17:22:34,645 | ====== Results for Recall@10 ====== 
+2024-09-08 17:22:34,645 | 	 Dialog Length: 0: 40.12%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 1: 39.05%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 2: 36.87%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 3: 37.16%
+2024-09-08 17:22:34,645 | 	 Dialog Length: 4: 36.82%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 5: 34.93%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 6: 32.56%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 7: 30.18%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 8: 28.83%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 9: 28.54%
+2024-09-08 17:22:34,646 | 	 Dialog Length: 10: 28.39%
+2024-09-08 17:22:34,646 | ====== Best log Rank Integral ====== 
+2024-09-08 17:22:34,646 | 	 BRI: 87.33241271972656
+2024-09-08 17:23:57,799 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 17:23:57,799 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 17:23:57,878 | Calculate recalls for each dialogues of length 0...
+2024-09-08 17:27:47,500 | Preparing corpus (search space)...
+2024-09-08 18:39:42,944 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_blip.pt >>>>>
+2024-09-08 18:39:42,945 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 18:39:43,128 | Calculate recalls for each dialogues of length 0...
+2024-09-08 18:43:25,414 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_blip.pt >>>>>
+2024-09-08 18:43:25,414 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 18:43:25,565 | Calculate recalls for each dialogues of length 0...
+2024-09-08 18:44:04,774 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 18:44:04,775 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 18:44:04,897 | Calculate recalls for each dialogues of length 0...
+2024-09-08 18:44:08,330 | Calculate recalls for each dialogues of length 1...
+2024-09-08 18:44:10,807 | Calculate recalls for each dialogues of length 2...
+2024-09-08 18:44:13,319 | Calculate recalls for each dialogues of length 3...
+2024-09-08 18:44:15,882 | Calculate recalls for each dialogues of length 4...
+2024-09-08 18:44:18,498 | Calculate recalls for each dialogues of length 5...
+2024-09-08 18:44:21,171 | Calculate recalls for each dialogues of length 6...
+2024-09-08 18:44:23,895 | Calculate recalls for each dialogues of length 7...
+2024-09-08 18:44:26,678 | Calculate recalls for each dialogues of length 8...
+2024-09-08 18:44:29,516 | Calculate recalls for each dialogues of length 9...
+2024-09-08 18:44:32,402 | Calculate recalls for each dialogues of length 10...
+2024-09-08 18:44:35,744 | ====== Results for Hits@10 ====== 
+2024-09-08 18:44:35,744 | 	 Dialog Length: 0: 40.12%
+2024-09-08 18:44:35,744 | 	 Dialog Length: 1: 45.25%
+2024-09-08 18:44:35,744 | 	 Dialog Length: 2: 48.11%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 3: 50.0%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 4: 51.41%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 5: 52.28%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 6: 53.1%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 7: 53.34%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 8: 53.44%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 9: 53.49%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 10: 53.49%
+2024-09-08 18:44:35,745 | ====== Results for Recall@10 ====== 
+2024-09-08 18:44:35,745 | 	 Dialog Length: 0: 40.12%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 1: 39.05%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 2: 36.87%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 3: 37.16%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 4: 36.82%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 5: 34.93%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 6: 32.56%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 7: 30.18%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 8: 28.83%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 9: 28.54%
+2024-09-08 18:44:35,745 | 	 Dialog Length: 10: 28.39%
+2024-09-08 18:44:35,745 | ====== Best log Rank Integral ====== 
+2024-09-08 18:44:35,746 | 	 BRI: 87.33241271972656
+2024-09-08 18:44:59,022 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 18:44:59,022 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 18:44:59,100 | Calculate recalls for each dialogues of length 0...
+2024-09-08 18:45:02,518 | Calculate recalls for each dialogues of length 1...
+2024-09-08 18:45:04,961 | Calculate recalls for each dialogues of length 2...
+2024-09-08 18:45:07,463 | Calculate recalls for each dialogues of length 3...
+2024-09-08 18:45:10,051 | Calculate recalls for each dialogues of length 4...
+2024-09-08 18:45:12,674 | Calculate recalls for each dialogues of length 5...
+2024-09-08 18:45:15,349 | Calculate recalls for each dialogues of length 6...
+2024-09-08 18:45:18,080 | Calculate recalls for each dialogues of length 7...
+2024-09-08 18:45:20,877 | Calculate recalls for each dialogues of length 8...
+2024-09-08 18:45:23,710 | Calculate recalls for each dialogues of length 9...
+2024-09-08 18:45:26,608 | Calculate recalls for each dialogues of length 10...
+2024-09-08 18:45:29,865 | ====== Results for Hits@10 ====== 
+2024-09-08 18:45:29,865 | 	 Dialog Length: 0: 40.12%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 1: 45.25%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 2: 48.11%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 3: 50.0%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 4: 51.41%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 5: 52.28%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 6: 53.1%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 7: 53.34%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 8: 53.44%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 9: 53.49%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 10: 53.49%
+2024-09-08 18:45:29,865 | ====== Results for Recall@10 ====== 
+2024-09-08 18:45:29,865 | 	 Dialog Length: 0: 40.12%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 1: 39.05%
+2024-09-08 18:45:29,865 | 	 Dialog Length: 2: 36.87%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 3: 37.16%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 4: 36.82%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 5: 34.93%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 6: 32.56%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 7: 30.18%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 8: 28.83%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 9: 28.54%
+2024-09-08 18:45:29,866 | 	 Dialog Length: 10: 28.39%
+2024-09-08 18:45:29,866 | ====== Best log Rank Integral ====== 
+2024-09-08 18:45:29,866 | 	 BRI: 87.33241271972656
+2024-09-08 18:59:13,855 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 18:59:13,855 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 18:59:13,892 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:09:49,496 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 19:09:49,496 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 19:09:49,545 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:15:48,943 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 19:15:48,943 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 19:15:49,022 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:15:52,488 | Calculate recalls for each dialogues of length 1...
+2024-09-08 19:15:55,006 | Calculate recalls for each dialogues of length 2...
+2024-09-08 19:15:57,589 | Calculate recalls for each dialogues of length 3...
+2024-09-08 19:16:00,230 | Calculate recalls for each dialogues of length 4...
+2024-09-08 19:16:02,915 | Calculate recalls for each dialogues of length 5...
+2024-09-08 19:16:05,650 | Calculate recalls for each dialogues of length 6...
+2024-09-08 19:16:08,448 | Calculate recalls for each dialogues of length 7...
+2024-09-08 19:16:11,319 | Calculate recalls for each dialogues of length 8...
+2024-09-08 19:16:14,246 | Calculate recalls for each dialogues of length 9...
+2024-09-08 19:16:17,220 | Calculate recalls for each dialogues of length 10...
+2024-09-08 19:16:20,550 | ====== Results for Hits@10 ====== 
+2024-09-08 19:16:20,551 | 	 Dialog Length: 0: 34.06%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 1: 38.42%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 2: 40.41%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 3: 41.67%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 4: 42.73%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 5: 43.36%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 6: 43.99%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 7: 44.23%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 8: 44.33%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 9: 44.33%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 10: 44.38%
+2024-09-08 19:16:20,551 | ====== Results for Recall@10 ====== 
+2024-09-08 19:16:20,551 | 	 Dialog Length: 0: 34.06%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 1: 31.3%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 2: 29.55%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 3: 28.73%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 4: 27.81%
+2024-09-08 19:16:20,551 | 	 Dialog Length: 5: 26.07%
+2024-09-08 19:16:20,552 | 	 Dialog Length: 6: 25.19%
+2024-09-08 19:16:20,552 | 	 Dialog Length: 7: 24.42%
+2024-09-08 19:16:20,552 | 	 Dialog Length: 8: 23.74%
+2024-09-08 19:16:20,552 | 	 Dialog Length: 9: 23.55%
+2024-09-08 19:16:20,552 | 	 Dialog Length: 10: 23.59%
+2024-09-08 19:16:20,552 | ====== Best log Rank Integral ====== 
+2024-09-08 19:16:20,552 | 	 BRI: 146.2257080078125
+2024-09-08 19:17:10,126 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip_madeby_eval.pt >>>>>
+2024-09-08 19:17:10,126 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 19:17:10,201 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:17:13,772 | Calculate recalls for each dialogues of length 1...
+2024-09-08 19:17:16,363 | Calculate recalls for each dialogues of length 2...
+2024-09-08 19:17:18,999 | Calculate recalls for each dialogues of length 3...
+2024-09-08 19:17:21,736 | Calculate recalls for each dialogues of length 4...
+2024-09-08 19:17:24,532 | Calculate recalls for each dialogues of length 5...
+2024-09-08 19:17:27,396 | Calculate recalls for each dialogues of length 6...
+2024-09-08 19:17:30,300 | Calculate recalls for each dialogues of length 7...
+2024-09-08 19:17:33,277 | Calculate recalls for each dialogues of length 8...
+2024-09-08 19:17:36,328 | Calculate recalls for each dialogues of length 9...
+2024-09-08 19:17:39,411 | Calculate recalls for each dialogues of length 10...
+2024-09-08 19:17:42,940 | ====== Results for Hits@10 ====== 
+2024-09-08 19:17:42,940 | 	 Dialog Length: 0: 40.12%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 1: 45.25%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 2: 48.11%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 3: 50.0%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 4: 51.41%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 5: 52.28%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 6: 53.1%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 7: 53.34%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 8: 53.44%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 9: 53.49%
+2024-09-08 19:17:42,940 | 	 Dialog Length: 10: 53.49%
+2024-09-08 19:17:42,940 | ====== Results for Recall@10 ====== 
+2024-09-08 19:17:42,941 | 	 Dialog Length: 0: 40.12%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 1: 39.05%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 2: 36.87%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 3: 37.16%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 4: 36.82%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 5: 34.93%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 6: 32.56%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 7: 30.18%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 8: 28.83%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 9: 28.54%
+2024-09-08 19:17:42,941 | 	 Dialog Length: 10: 28.39%
+2024-09-08 19:17:42,941 | ====== Best log Rank Integral ====== 
+2024-09-08 19:17:42,942 | 	 BRI: 87.33241271972656
+2024-09-08 19:26:35,532 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 19:26:35,533 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 19:26:35,580 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:30:42,992 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_clip.pt >>>>>
+2024-09-08 19:30:42,992 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 19:30:43,071 | Calculate recalls for each dialogues of length 0...
+2024-09-08 19:30:46,601 | Calculate recalls for each dialogues of length 1...
+2024-09-08 19:30:49,133 | Calculate recalls for each dialogues of length 2...
+2024-09-08 19:30:51,732 | Calculate recalls for each dialogues of length 3...
+2024-09-08 19:30:54,380 | Calculate recalls for each dialogues of length 4...
+2024-09-08 19:30:57,088 | Calculate recalls for each dialogues of length 5...
+2024-09-08 19:30:59,851 | Calculate recalls for each dialogues of length 6...
+2024-09-08 19:31:02,685 | Calculate recalls for each dialogues of length 7...
+2024-09-08 19:31:05,578 | Calculate recalls for each dialogues of length 8...
+2024-09-08 19:31:08,507 | Calculate recalls for each dialogues of length 9...
+2024-09-08 19:31:11,486 | Calculate recalls for each dialogues of length 10...
+2024-09-08 19:31:14,830 | ====== Results for Hits@10 ====== 
+2024-09-08 19:31:14,830 | 	 Dialog Length: 0: 40.07%
+2024-09-08 19:31:14,830 | 	 Dialog Length: 1: 45.2%
+2024-09-08 19:31:14,830 | 	 Dialog Length: 2: 48.06%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 3: 50.05%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 4: 51.45%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 5: 52.33%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 6: 53.15%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 7: 53.39%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 8: 53.54%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 9: 53.59%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 10: 53.59%
+2024-09-08 19:31:14,831 | ====== Results for Recall@10 ====== 
+2024-09-08 19:31:14,831 | 	 Dialog Length: 0: 40.07%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 1: 39.1%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 2: 36.77%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 3: 37.16%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 4: 36.77%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 5: 34.88%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 6: 32.61%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 7: 30.28%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 8: 28.92%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 9: 28.59%
+2024-09-08 19:31:14,831 | 	 Dialog Length: 10: 28.44%
+2024-09-08 19:31:14,831 | ====== Best log Rank Integral ====== 
+2024-09-08 19:31:14,832 | 	 BRI: 87.3910903930664
+2024-09-08 21:15:55,330 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_blip.pt >>>>>
+2024-09-08 21:15:55,348 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 21:15:55,483 | Calculate recalls for each dialogues of length 0...
+2024-09-08 21:26:09,176 | Preparing corpus (search space)...
+2024-09-08 21:27:07,683 | Preparing corpus (search space)...
+2024-09-08 22:08:28,383 | <<<<Cached corpus has been loaded: mycode/corpus_vectors_blip.pt >>>>>
+2024-09-08 22:08:28,383 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-08 22:08:28,429 | Calculate recalls for each dialogues of length 0...
+2024-09-08 22:08:31,850 | Calculate recalls for each dialogues of length 1...
+2024-09-08 22:08:34,715 | Calculate recalls for each dialogues of length 2...
+2024-09-08 22:08:38,137 | Calculate recalls for each dialogues of length 3...
+2024-09-08 22:08:42,020 | Calculate recalls for each dialogues of length 4...
+2024-09-08 22:08:46,501 | Calculate recalls for each dialogues of length 5...
+2024-09-08 22:08:51,918 | Calculate recalls for each dialogues of length 6...
+2024-09-08 22:08:57,847 | Calculate recalls for each dialogues of length 7...
+2024-09-08 22:09:04,671 | Calculate recalls for each dialogues of length 8...
+2024-09-08 22:09:12,422 | Calculate recalls for each dialogues of length 9...
+2024-09-08 22:09:20,619 | Calculate recalls for each dialogues of length 10...
+2024-09-08 22:09:30,031 | ====== Results for Hits@10 ====== 
+2024-09-08 22:09:30,032 | 	 Dialog Length: 0: 71.12%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 1: 75.15%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 2: 77.66%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 3: 79.26%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 4: 81.06%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 5: 82.12%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 6: 83.28%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 7: 83.67%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 8: 84.01%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 9: 84.3%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 10: 84.98%
+2024-09-08 22:09:30,032 | ====== Results for Recall@10 ====== 
+2024-09-08 22:09:30,032 | 	 Dialog Length: 0: 71.12%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 1: 70.64%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 2: 68.75%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 3: 66.62%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 4: 65.12%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 5: 64.44%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 6: 63.23%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 7: 61.58%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 8: 61.09%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 9: 60.47%
+2024-09-08 22:09:30,032 | 	 Dialog Length: 10: 59.4%
+2024-09-08 22:09:30,032 | ====== Best log Rank Integral ====== 
+2024-09-08 22:09:30,033 | 	 BRI: 12.55770492553711
+2024-09-09 00:06:45,227 | <<<<Cached corpus has been loaded: cache/corpus_vectors_blip_finetuning.pt >>>>>
+2024-09-09 00:06:45,228 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-09 00:06:45,298 | Calculate recalls for each dialogues of length 0...
+2024-09-09 00:06:49,022 | Calculate recalls for each dialogues of length 1...
+2024-09-09 00:06:51,910 | Calculate recalls for each dialogues of length 2...
+2024-09-09 00:06:55,333 | Calculate recalls for each dialogues of length 3...
+2024-09-09 00:06:59,279 | Calculate recalls for each dialogues of length 4...
+2024-09-09 00:07:03,844 | Calculate recalls for each dialogues of length 5...
+2024-09-09 00:07:09,095 | Calculate recalls for each dialogues of length 6...
+2024-09-09 00:07:15,088 | Calculate recalls for each dialogues of length 7...
+2024-09-09 00:07:21,773 | Calculate recalls for each dialogues of length 8...
+2024-09-09 00:07:29,304 | Calculate recalls for each dialogues of length 9...
+2024-09-09 00:07:37,777 | Calculate recalls for each dialogues of length 10...
+2024-09-09 00:07:47,376 | ====== Results for Hits@10 ====== 
+2024-09-09 00:07:47,377 | 	 Dialog Length: 0: 71.12%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 1: 75.15%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 2: 77.66%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 3: 79.26%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 4: 81.06%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 5: 82.12%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 6: 83.28%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 7: 83.67%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 8: 84.01%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 9: 84.3%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 10: 84.98%
+2024-09-09 00:07:47,377 | ====== Results for Recall@10 ====== 
+2024-09-09 00:07:47,377 | 	 Dialog Length: 0: 71.12%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 1: 70.64%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 2: 68.75%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 3: 66.62%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 4: 65.12%
+2024-09-09 00:07:47,377 | 	 Dialog Length: 5: 64.44%
+2024-09-09 00:07:47,378 | 	 Dialog Length: 6: 63.23%
+2024-09-09 00:07:47,378 | 	 Dialog Length: 7: 61.58%
+2024-09-09 00:07:47,378 | 	 Dialog Length: 8: 61.09%
+2024-09-09 00:07:47,378 | 	 Dialog Length: 9: 60.47%
+2024-09-09 00:07:47,378 | 	 Dialog Length: 10: 59.4%
+2024-09-09 00:07:47,378 | ====== Best log Rank Integral ====== 
+2024-09-09 00:07:47,378 | 	 BRI: 12.55770492553711
+2024-09-10 16:29:23,158 | Load pretrained model with msg: <All keys matched successfully>
+2024-09-10 16:29:25,187 | <<<<Cached corpus has been loaded: cache/corpus_vectors_blip_finetuned_plugir.pt >>>>>
+2024-09-10 16:29:25,187 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-10 16:29:25,309 | Calculate recalls for each dialogues of length 0...
+2024-09-10 16:29:41,103 | Calculate recalls for each dialogues of length 1...
+2024-09-10 16:29:44,023 | Calculate recalls for each dialogues of length 2...
+2024-09-10 16:29:47,453 | Calculate recalls for each dialogues of length 3...
+2024-09-10 16:29:51,396 | Calculate recalls for each dialogues of length 4...
+2024-09-10 16:29:55,925 | Calculate recalls for each dialogues of length 5...
+2024-09-10 16:30:01,123 | Calculate recalls for each dialogues of length 6...
+2024-09-10 16:30:07,269 | Calculate recalls for each dialogues of length 7...
+2024-09-10 16:30:14,137 | Calculate recalls for each dialogues of length 8...
+2024-09-10 16:30:21,603 | Calculate recalls for each dialogues of length 9...
+2024-09-10 16:30:30,039 | Calculate recalls for each dialogues of length 10...
+2024-09-10 16:30:39,792 | ====== Results for Hits@10 ====== 
+2024-09-10 16:30:39,792 | 	 Dialog Length: 0: 68.7%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 1: 72.97%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 2: 75.82%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 3: 77.86%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 4: 79.89%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 5: 81.35%
+2024-09-10 16:30:39,792 | 	 Dialog Length: 6: 82.51%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 7: 83.53%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 8: 84.3%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 9: 84.74%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 10: 85.27%
+2024-09-10 16:30:39,793 | ====== Results for Recall@10 ====== 
+2024-09-10 16:30:39,793 | 	 Dialog Length: 0: 68.7%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 1: 71.41%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 2: 72.72%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 3: 73.93%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 4: 76.07%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 5: 76.89%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 6: 77.57%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 7: 78.54%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 8: 78.73%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 9: 79.41%
+2024-09-10 16:30:39,793 | 	 Dialog Length: 10: 79.6%
+2024-09-10 16:30:39,793 | ====== Best log Rank Integral ====== 
+2024-09-10 16:30:39,794 | 	 BRI: 16.320955276489258
+2024-09-10 16:35:07,414 | Load pretrained model with msg: <All keys matched successfully>
+2024-09-10 16:35:09,377 | <<<<Cached corpus has been loaded: cache/corpus_vectors_blip_finetuned_plugir.pt >>>>>
+2024-09-10 16:35:09,377 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-10 16:36:47,601 | Load pretrained model with msg: <All keys matched successfully>
+2024-09-10 16:36:49,558 | <<<<Cached corpus has been loaded: cache/corpus_vectors_blip_finetuned_plugir.pt >>>>>
+2024-09-10 16:36:49,558 | Warning: Make sure this corpus has been indexed with the right image embedder!
+2024-09-10 16:36:49,619 | Calculate recalls for each dialogues of length 0...
+2024-09-10 16:36:53,139 | Calculate recalls for each dialogues of length 1...
+2024-09-10 16:36:56,921 | Calculate recalls for each dialogues of length 2...
+2024-09-10 16:37:02,300 | Calculate recalls for each dialogues of length 3...
+2024-09-10 16:37:09,238 | Calculate recalls for each dialogues of length 4...
+2024-09-10 16:37:17,920 | Calculate recalls for each dialogues of length 5...
+2024-09-10 16:37:28,800 | Calculate recalls for each dialogues of length 6...
+2024-09-10 16:37:42,541 | Calculate recalls for each dialogues of length 7...
+2024-09-10 16:37:59,277 | Calculate recalls for each dialogues of length 8...
+2024-09-10 16:38:17,994 | Calculate recalls for each dialogues of length 9...
+2024-09-10 16:38:37,648 | Calculate recalls for each dialogues of length 10...
+2024-09-10 16:38:57,955 | ====== Results for Hits@10 ====== 
+2024-09-10 16:38:57,955 | 	 Dialog Length: 0: 68.7%
+2024-09-10 16:38:57,955 | 	 Dialog Length: 1: 76.02%
+2024-09-10 16:38:57,955 | 	 Dialog Length: 2: 79.84%
+2024-09-10 16:38:57,955 | 	 Dialog Length: 3: 82.36%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 4: 83.43%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 5: 84.69%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 6: 85.37%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 7: 85.76%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 8: 86.24%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 9: 86.43%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 10: 86.92%
+2024-09-10 16:38:57,956 | ====== Results for Recall@10 ====== 
+2024-09-10 16:38:57,956 | 	 Dialog Length: 0: 68.7%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 1: 73.11%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 2: 75.44%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 3: 77.47%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 4: 77.66%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 5: 77.96%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 6: 77.96%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 7: 77.28%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 8: 76.74%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 9: 75.73%
+2024-09-10 16:38:57,956 | 	 Dialog Length: 10: 75.48%
+2024-09-10 16:38:57,956 | ====== Best log Rank Integral ====== 
+2024-09-10 16:38:57,957 | 	 BRI: 16.02005958557129
